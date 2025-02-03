@@ -1,7 +1,11 @@
+"use client";
 import Image from "next/image";
 import styles from "./page.module.css";
+import { useState } from "react";
 
 export default function Home() {
+  const [count, setCount] = useState(0);
+
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -19,6 +23,16 @@ export default function Home() {
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
+
+        <div style={{ margin: '20px 0', textAlign: 'center' }}>
+          <h2>计数器: {count}</h2>
+          <button onClick={() => setCount(count + 1)} style={{ margin: '0 10px', padding: '10px 20px' }}>
+            增加
+          </button>
+          <button onClick={() => setCount(count - 1)} style={{ margin: '0 10px', padding: '10px 20px' }}>
+            减少
+          </button>
+        </div>
 
         <div className={styles.ctas}>
           <a
