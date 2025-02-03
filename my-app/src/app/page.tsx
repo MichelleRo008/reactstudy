@@ -5,6 +5,15 @@ import { useState } from "react";
 
 export default function Home() {
   const [count, setCount] = useState(0);
+  const [bgColor, setBgColor] = useState('white');
+
+  const colors = ['white', 'lightblue', 'lightgreen', 'lightcoral', 'lightyellow', 'lightpink'];
+  
+  const changeColor = () => {
+    const currentIndex = colors.indexOf(bgColor);
+    const nextIndex = (currentIndex + 1) % colors.length;
+    setBgColor(colors[nextIndex]);
+  };
 
   return (
     <div className={styles.page}>
@@ -24,13 +33,17 @@ export default function Home() {
           <li>Save and see your changes instantly.</li>
         </ol>
 
-        <div style={{ margin: '20px 0', textAlign: 'center' }}>
+        <div style={{ margin: '20px 0', textAlign: 'center', backgroundColor: bgColor, padding: '20px', borderRadius: '10px', transition: 'background-color 0.3s ease' }}>
           <h2>计数器: {count}</h2>
           <button onClick={() => setCount(count + 1)} style={{ margin: '0 10px', padding: '10px 20px' }}>
             增加
           </button>
           <button onClick={() => setCount(count - 1)} style={{ margin: '0 10px', padding: '10px 20px' }}>
             减少
+          </button>
+          <br />
+          <button onClick={changeColor} style={{ margin: '10px', padding: '10px 20px', backgroundColor: '#007bff', color: 'white', border: 'none', borderRadius: '5px' }}>
+            改变颜色
           </button>
         </div>
 
