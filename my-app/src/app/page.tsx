@@ -64,6 +64,116 @@ export default function Home() {
                 改变颜色
               </button>
             </div>
+
+            {/* 数据表格 */}
+            <div style={{ margin: '30px 0', padding: '20px', backgroundColor: '#f8f9fa', borderRadius: '10px' }}>
+              <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>用户数据表格</h2>
+              <table style={{ 
+                width: '100%', 
+                borderCollapse: 'collapse',
+                backgroundColor: 'white',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
+              }}>
+                <thead>
+                  <tr style={{ backgroundColor: '#007bff', color: 'white' }}>
+                    <th style={{ padding: '12px 15px', textAlign: 'left', fontWeight: 'bold' }}>ID</th>
+                    <th style={{ padding: '12px 15px', textAlign: 'left', fontWeight: 'bold' }}>姓名</th>
+                    <th style={{ padding: '12px 15px', textAlign: 'left', fontWeight: 'bold' }}>邮箱</th>
+                    <th style={{ padding: '12px 15px', textAlign: 'left', fontWeight: 'bold' }}>部门</th>
+                    <th style={{ padding: '12px 15px', textAlign: 'left', fontWeight: 'bold' }}>状态</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style={{ borderBottom: '1px solid #eee' }}>
+                    <td style={{ padding: '12px 15px' }}>001</td>
+                    <td style={{ padding: '12px 15px' }}>张三</td>
+                    <td style={{ padding: '12px 15px' }}>zhangsan@example.com</td>
+                    <td style={{ padding: '12px 15px' }}>技术部</td>
+                    <td style={{ padding: '12px 15px' }}>
+                      <span style={{ 
+                        padding: '4px 8px', 
+                        backgroundColor: '#28a745', 
+                        color: 'white', 
+                        borderRadius: '4px', 
+                        fontSize: '12px' 
+                      }}>
+                        在职
+                      </span>
+                    </td>
+                  </tr>
+                  <tr style={{ borderBottom: '1px solid #eee', backgroundColor: '#f9f9f9' }}>
+                    <td style={{ padding: '12px 15px' }}>002</td>
+                    <td style={{ padding: '12px 15px' }}>李四</td>
+                    <td style={{ padding: '12px 15px' }}>lisi@example.com</td>
+                    <td style={{ padding: '12px 15px' }}>销售部</td>
+                    <td style={{ padding: '12px 15px' }}>
+                      <span style={{ 
+                        padding: '4px 8px', 
+                        backgroundColor: '#28a745', 
+                        color: 'white', 
+                        borderRadius: '4px', 
+                        fontSize: '12px' 
+                      }}>
+                        在职
+                      </span>
+                    </td>
+                  </tr>
+                  <tr style={{ borderBottom: '1px solid #eee' }}>
+                    <td style={{ padding: '12px 15px' }}>003</td>
+                    <td style={{ padding: '12px 15px' }}>王五</td>
+                    <td style={{ padding: '12px 15px' }}>wangwu@example.com</td>
+                    <td style={{ padding: '12px 15px' }}>财务部</td>
+                    <td style={{ padding: '12px 15px' }}>
+                      <span style={{ 
+                        padding: '4px 8px', 
+                        backgroundColor: '#ffc107', 
+                        color: 'white', 
+                        borderRadius: '4px', 
+                        fontSize: '12px' 
+                      }}>
+                        请假
+                      </span>
+                    </td>
+                  </tr>
+                  <tr style={{ borderBottom: '1px solid #eee', backgroundColor: '#f9f9f9' }}>
+                    <td style={{ padding: '12px 15px' }}>004</td>
+                    <td style={{ padding: '12px 15px' }}>赵六</td>
+                    <td style={{ padding: '12px 15px' }}>zhaoliu@example.com</td>
+                    <td style={{ padding: '12px 15px' }}>人事部</td>
+                    <td style={{ padding: '12px 15px' }}>
+                      <span style={{ 
+                        padding: '4px 8px', 
+                        backgroundColor: '#28a745', 
+                        color: 'white', 
+                        borderRadius: '4px', 
+                        fontSize: '12px' 
+                      }}>
+                        在职
+                      </span>
+                    </td>
+                  </tr>
+                  <tr style={{ borderBottom: '1px solid #eee' }}>
+                    <td style={{ padding: '12px 15px' }}>005</td>
+                    <td style={{ padding: '12px 15px' }}>孙七</td>
+                    <td style={{ padding: '12px 15px' }}>sunqi@example.com</td>
+                    <td style={{ padding: '12px 15px' }}>市场部</td>
+                    <td style={{ padding: '12px 15px' }}>
+                      <span style={{ 
+                        padding: '4px 8px', 
+                        backgroundColor: '#dc3545', 
+                        color: 'white', 
+                        borderRadius: '4px', 
+                        fontSize: '12px' 
+                      }}>
+                        离职
+                      </span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </>
         );
     }
