@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import styles from "./page.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import About from "../components/About";
 import Contact from "../components/Contact";
 
@@ -9,6 +9,7 @@ export default function Home() {
   const [count, setCount] = useState(0);
   const [bgColor, setBgColor] = useState('white');
   const [currentPage, setCurrentPage] = useState('home');
+  const [currentTime, setCurrentTime] = useState(new Date());
 
   const colors = ['white', 'lightblue', 'lightgreen', 'lightcoral', 'lightyellow', 'lightpink'];
   
@@ -17,6 +18,14 @@ export default function Home() {
     const nextIndex = (currentIndex + 1) % colors.length;
     setBgColor(colors[nextIndex]);
   };
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   const renderPage = () => {
     switch (currentPage) {
@@ -62,13 +71,40 @@ export default function Home() {
 
   return (
     <div className={styles.page}>
+      {/* 时间显示 */}
+      <div style={{
+        backgroundColor: '#f8f9fa',
+        padding: '10px 0',
+        textAlign: 'center',
+        borderBottom: '1px solid #ddd',
+        position: 'sticky',
+        top: 0,
+        zIndex: 101
+      }}>
+        <span style={{ 
+          fontSize: '18px', 
+          fontWeight: 'bold', 
+          color: '#333'
+        }}>
+          {currentTime.toLocaleString('zh-CN', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            weekday: 'long'
+          })}
+        </span>
+      </div>
+
       {/* 导航栏 */}
       <nav style={{ 
         backgroundColor: '#333', 
         padding: '15px 0', 
         marginBottom: '20px',
         position: 'sticky',
-        top: 0,
+        top: '50px',
         zIndex: 100
       }}>
         <div style={{ 
